@@ -86,13 +86,13 @@ const Portfolio3D = () => {
     },
     {
       id: 3,
-      title: 'Crypto Tracker',
-      icon: '₿',
-      description: 'An interactive crypto tracker that visualizes real-time price changes and charts',
-      tech: ['React', 'TypeScript', 'Styled-components', 'Apexcharts'],
+      title: 'My Portfolio',
+      icon: '✨',
+      description: 'Portfolio website with smooth Framer Motion animations',
+      tech: ['React', 'JavaScript', 'Tailwind CSS', 'Framer-Motion'],
       color: 'from-blue-600 to-cyan-600',
-      live: 'https://nahyunleylalee.github.io/Crypto',
-      github: 'https://github.com/NahyunLeylaLee/Crypto',
+      live: 'https://nahyunleylalee.github.io/Myportfolio',
+      github: 'https://github.com/NahyunLeylaLee/Myportfolio',
     }
   ];
 
