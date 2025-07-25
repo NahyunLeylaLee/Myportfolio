@@ -14,7 +14,7 @@ const Portfolio3D = () => {
   const heroInView = useInView(heroRef, { margin: "-10px 0px 0px 0px" });
   const aboutInView = useInView(aboutRef, { margin: "-10px 0px 0px 0px" });
   const skillsInView = useInView(skillsRef, { margin: "-10px 0px 0px 0px" });
-  const projectsInView = useInView(projectsRef, { margin: "-10px 0px 0px 0px", amount: 0.2 });
+  const projectsInView = useInView(projectsRef, { margin: "-10px 0px 0px 0px", amount: 0 });
   const contactInView = useInView(contactRef, { margin: "-10px 0px 0px 0px" });
 
   // Mouse tracking for 3D effects
@@ -170,7 +170,7 @@ const Portfolio3D = () => {
             transition={{ duration: 1, ease: "easeOut" }}
             className="mb-8"
           >
-            <motion.div
+            {/* <motion.div
               className="w-32 h-32 mx-auto mb-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-4xl font-bold"
               style={{
                 rotateX: mousePosition.y / 10,
@@ -184,7 +184,7 @@ const Portfolio3D = () => {
               }}
             >
               Leyla
-            </motion.div>
+            </motion.div> */}
           </motion.div>
 
           <motion.h1
@@ -552,7 +552,7 @@ const Portfolio3D = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" ref={contactRef} className="py-20 px-6 bg-gradient-to-t from-purple-900/20 to-black">
+      <section id="contact" ref={contactRef} className="flex items-center py-20 px-6 bg-gradient-to-t from-purple-900/20 to-black h-[800px]">
         <div className="max-w-4xl mx-auto text-center">
           <motion.h2
             className="text-5xl font-bold mb-8 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent pb-5"
