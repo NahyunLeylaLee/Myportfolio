@@ -11,11 +11,11 @@ const Portfolio3D = () => {
   const projectsRef = useRef(null);
   const contactRef = useRef(null);
 
-  const heroInView = useInView(heroRef, { threshold: 0.5 });
-  const aboutInView = useInView(aboutRef, { threshold: 0.3 });
-  const skillsInView = useInView(skillsRef, { threshold: 0.3 });
-  const projectsInView = useInView(projectsRef, { threshold: 0.3 });
-  const contactInView = useInView(contactRef, { threshold: 0.3 });
+  const heroInView = useInView(heroRef, { margin: "-10px 0px 0px 0px" });
+  const aboutInView = useInView(aboutRef, { margin: "-10px 0px 0px 0px" });
+  const skillsInView = useInView(skillsRef, { margin: "-10px 0px 0px 0px" });
+  const projectsInView = useInView(projectsRef, { margin: "-10px 0px 0px 0px", amount: 0.2 });
+  const contactInView = useInView(contactRef, { margin: "-10px 0px 0px 0px" });
 
   // Mouse tracking for 3D effects
   useEffect(() => {
@@ -32,11 +32,16 @@ const Portfolio3D = () => {
 
   // Update active section based on scroll
   useEffect(() => {
-    if (heroInView) setActiveSection('home');
-    else if (aboutInView) setActiveSection('about');
-    else if (skillsInView) setActiveSection('skills');
-    else if (projectsInView) setActiveSection('projects');
-    else if (contactInView) setActiveSection('contact');
+    if (heroInView)
+      setActiveSection('home');
+    else if (aboutInView)
+      setActiveSection('about');
+    else if (skillsInView)
+      setActiveSection('skills');
+    else if (projectsInView)
+      setActiveSection('projects');
+    else
+      setActiveSection('contact');
   }, [heroInView, aboutInView, skillsInView, projectsInView, contactInView]);
 
   const scrollToSection = (sectionId) => {
@@ -111,9 +116,9 @@ const Portfolio3D = () => {
               <motion.button
                 key={section}
                 onClick={() => scrollToSection(section)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${activeSection === section
+                className={`px-4 py-2 cursor-pointer rounded-full text-sm font-medium transition-all duration-300 ${activeSection === section
                   ? "bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg"
-                  : "text-white/70 hover:text-white hover:bg-white/10"
+                  : "text-white/70"
                   }`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
