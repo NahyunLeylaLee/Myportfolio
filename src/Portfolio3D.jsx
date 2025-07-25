@@ -5,13 +5,13 @@ const Portfolio3D = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const { scrollYProgress } = useScroll();
-  const heroRef = useRef(null);
+  const homeRef = useRef(null);
   const aboutRef = useRef(null);
   const skillsRef = useRef(null);
   const projectsRef = useRef(null);
   const contactRef = useRef(null);
 
-  const heroInView = useInView(heroRef, { margin: "-10px 0px 0px 0px" });
+  const heroInView = useInView(homeRef, { margin: "-10px 0px 0px 0px" });
   const aboutInView = useInView(aboutRef, { margin: "-10px 0px 0px 0px" });
   const skillsInView = useInView(skillsRef, { margin: "-10px 0px 0px 0px" });
   const projectsInView = useInView(projectsRef, { margin: "-10px 0px 0px 0px", amount: 0 });
@@ -105,13 +105,14 @@ const Portfolio3D = () => {
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
       {/* Floating Navigation */}
       <motion.nav
-        className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50"
+        // style={{width: '95vw'}}
+        className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 hidden sm:block"
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.5 }}
       >
         <div className="bg-white/10 backdrop-blur-lg rounded-full px-6 py-3 border border-white/20">
-          <div className="flex space-x-6">
+          <div className="flex gap-6">
             {['home', 'about', 'skills', 'projects', 'contact'].map((section) => (
               <motion.button
                 key={section}
@@ -127,6 +128,24 @@ const Portfolio3D = () => {
               </motion.button>
             ))}
           </div>
+          {/* ['🏠', '👩🏻‍💻', '💡', '📄', '📞'] */}
+          {/* <div className="flex justify-between">
+            {['home', 'about', 'skills', 'projects', 'contact'].map((section) => (
+              <motion.button
+                style={{fontSize: '30px'}}
+                key={section}
+                onClick={() => scrollToSection(section)}
+                className={`px-3 py-2 cursor-pointer rounded-full text-sm font-medium transition-all duration-300 ${activeSection === section
+                  ? "bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg"
+                  : "text-white/70"
+                  }`}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                {section.charAt(0).toUpperCase() + section.slice(1)}
+              </motion.button>
+            ))}
+          </div> */}
         </div>
       </motion.nav>
 
@@ -162,7 +181,7 @@ const Portfolio3D = () => {
       </div>
 
       {/* Hero Section */}
-      <section id="home" ref={heroRef} className="min-h-screen flex items-center justify-center relative">
+      <section id="home" ref={homeRef} className="min-h-screen flex items-center justify-center relative">
         <div className="text-center z-10">
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
@@ -217,7 +236,7 @@ const Portfolio3D = () => {
             className="cursor-pointer px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full text-white font-semibold shadow-2xl"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
             whileHover={{
               scale: 1.05,
               boxShadow: "0 20px 40px rgba(168, 85, 247, 0.4)",
@@ -552,7 +571,7 @@ const Portfolio3D = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" ref={contactRef} className="flex items-center py-20 px-6 bg-gradient-to-t from-purple-900/20 to-black h-[800px]">
+      <section id="contact" ref={contactRef} className="flex h-[800px] items-center py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <motion.h2
             className="text-5xl font-bold mb-8 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent pb-5"
@@ -630,7 +649,7 @@ const Portfolio3D = () => {
             onClick={() => handleClick('https://www.linkedin.com/in/nahyun-lee-6458a2113')}
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
             viewport={{ once: true }}
             whileHover={{
               scale: 1.05,
