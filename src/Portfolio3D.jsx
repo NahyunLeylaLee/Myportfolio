@@ -105,7 +105,6 @@ const Portfolio3D = () => {
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
       {/* Floating Navigation */}
       <motion.nav
-        // style={{width: '95vw'}}
         className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 hidden sm:block"
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -129,23 +128,6 @@ const Portfolio3D = () => {
             ))}
           </div>
           {/* ['🏠', '👩🏻‍💻', '💡', '📄', '📞'] */}
-          {/* <div className="flex justify-between">
-            {['home', 'about', 'skills', 'projects', 'contact'].map((section) => (
-              <motion.button
-                style={{fontSize: '30px'}}
-                key={section}
-                onClick={() => scrollToSection(section)}
-                className={`px-3 py-2 cursor-pointer rounded-full text-sm font-medium transition-all duration-300 ${activeSection === section
-                  ? "bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg"
-                  : "text-white/70"
-                  }`}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {section.charAt(0).toUpperCase() + section.slice(1)}
-              </motion.button>
-            ))}
-          </div> */}
         </div>
       </motion.nav>
 
@@ -571,7 +553,7 @@ const Portfolio3D = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" ref={contactRef} className="flex h-[800px] items-center py-20 px-6">
+      <section id="contact" ref={contactRef} className="flex h-[850px] items-center py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <motion.h2
             className="text-5xl font-bold mb-8 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent pb-5"
