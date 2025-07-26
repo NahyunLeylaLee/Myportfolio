@@ -11,7 +11,7 @@ const Portfolio3D = () => {
   const projectsRef = useRef(null);
   const contactRef = useRef(null);
 
-  const heroInView = useInView(homeRef, { margin: "-10px 0px 0px 0px" });
+  const homeInView = useInView(homeRef, { margin: "-10px 0px 0px 0px" });
   const aboutInView = useInView(aboutRef, { margin: "-10px 0px 0px 0px" });
   const skillsInView = useInView(skillsRef, { margin: "-10px 0px 0px 0px" });
   const projectsInView = useInView(projectsRef, { margin: "-10px 0px 0px 0px"});
@@ -32,7 +32,7 @@ const Portfolio3D = () => {
 
   // Update active section based on scroll
   useEffect(() => {
-    if (heroInView)
+    if (homeInView)
       setActiveSection('home');
     else if (aboutInView)
       setActiveSection('about');
@@ -42,7 +42,7 @@ const Portfolio3D = () => {
       setActiveSection('projects');
     else
       setActiveSection('contact');
-  }, [heroInView, aboutInView, skillsInView, projectsInView, contactInView]);
+  }, [homeInView, aboutInView, skillsInView, projectsInView, contactInView]);
 
   const scrollToSection = (sectionId) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
@@ -162,7 +162,7 @@ const Portfolio3D = () => {
         />
       </div>
 
-      {/* Hero Section */}
+      {/* Home Section */}
       <section id="home" ref={homeRef} className="min-h-screen flex items-center justify-center relative">
         <div className="text-center z-10">
           <motion.div
@@ -189,7 +189,7 @@ const Portfolio3D = () => {
           </motion.div>
 
           <motion.h1
-            className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent"
+            className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent pb-5"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -362,10 +362,10 @@ const Portfolio3D = () => {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" ref={skillsRef} className="py-20 px-6 bg-gradient-to-b from-black to-purple-900/10">
+      <section id="skills" ref={skillsRef} className="bg-gradient-to-b from-black to-purple-900/10">
         <div className="max-w-6xl mx-auto">
           <motion.h2
-            className="text-5xl font-bold text-center mb-16 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent"
+            className="py-2 text-5xl font-bold text-center mb-16 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -435,7 +435,7 @@ const Portfolio3D = () => {
       <section id="projects" ref={projectsRef} className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <motion.h2
-            className="text-5xl font-bold text-center mb-16 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent"
+            className="py-2 text-5xl font-bold text-center mb-16 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -556,7 +556,7 @@ const Portfolio3D = () => {
       <section id="contact" ref={contactRef} className="flex items-center py-20 px-6 min-h-[850px]">
         <div className="mx-auto text-center">
           <motion.h2
-            className="text-5xl font-bold mb-8 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent pb-5"
+            className="py-2 text-5xl font-bold mb-8 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -627,6 +627,7 @@ const Portfolio3D = () => {
           </motion.div>
 
           <motion.button
+            style={{zIndex: "10"}}
             className="cursor-pointer px-12 py-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full text-white font-semibold text-lg shadow-2xl"
             onClick={() => handleClick('https://www.linkedin.com/in/nahyun-lee-6458a2113')}
             initial={{ opacity: 0, scale: 0.8 }}
