@@ -14,7 +14,7 @@ const Portfolio3D = () => {
   const heroInView = useInView(homeRef, { margin: "-10px 0px 0px 0px" });
   const aboutInView = useInView(aboutRef, { margin: "-10px 0px 0px 0px" });
   const skillsInView = useInView(skillsRef, { margin: "-10px 0px 0px 0px" });
-  const projectsInView = useInView(projectsRef, { margin: "-10px 0px 0px 0px", amount: 0 });
+  const projectsInView = useInView(projectsRef, { margin: "-10px 0px 0px 0px"});
   const contactInView = useInView(contactRef, { margin: "-10px 0px 0px 0px" });
 
   // Mouse tracking for 3D effects
@@ -553,8 +553,8 @@ const Portfolio3D = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" ref={contactRef} className="flex h-[850px] items-center py-20 px-6">
-        <div className="max-w-4xl mx-auto text-center">
+      <section id="contact" ref={contactRef} className="flex items-center py-20 px-6 min-h-[850px]">
+        <div className="mx-auto text-center">
           <motion.h2
             className="text-5xl font-bold mb-8 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent pb-5"
             initial={{ opacity: 0, y: 50 }}
@@ -566,7 +566,7 @@ const Portfolio3D = () => {
           </motion.h2>
 
           <motion.p
-            className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto"
+            className="text-xl text-gray-300 mb-12 mx-auto"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
