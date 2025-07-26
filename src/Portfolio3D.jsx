@@ -362,7 +362,7 @@ const Portfolio3D = () => {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" ref={skillsRef} className="bg-gradient-to-b from-black to-purple-900/10">
+      <section id="skills" ref={skillsRef} className="py-20 px-6 bg-gradient-to-b from-black to-purple-900/10">
         <div className="max-w-6xl mx-auto">
           <motion.h2
             className="py-2 text-5xl font-bold text-center mb-16 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent"
