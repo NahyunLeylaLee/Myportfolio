@@ -91,13 +91,13 @@ const Portfolio3D = () => {
     },
     {
       id: 3,
-      title: 'My Portfolio',
-      icon: '✨',
-      description: 'Portfolio website with smooth Framer Motion animations',
-      tech: ['React', 'JavaScript', 'Tailwind CSS', 'Framer-Motion'],
+      title: 'Kanban-board',
+      icon: '📝',
+      description: 'Interactive Kanban board for task management with drag-and-drop functionality.',
+      tech: ['React', 'TypeScript', 'Tailwind CSS', 'HTML'],
       color: 'from-blue-600 to-cyan-600',
-      live: 'https://nahyunleylalee.github.io/Myportfolio',
-      github: 'https://github.com/NahyunLeylaLee/Myportfolio',
+      live: 'https://nahyunleylalee.github.io/Kanban-board',
+      github: 'https://github.com/NahyunLeylaLee/Kanban-board',
     }
   ];
 
